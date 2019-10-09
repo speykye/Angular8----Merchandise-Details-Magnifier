@@ -1,0 +1,48 @@
+$width: 200px;
+$height: 200px;
+%defaultP {
+    width: $width;
+    height: $height;
+}
+
+%defaultMargin {
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+%borders {
+    border: 1px solid #000;
+}
+
+.zoom {
+    @extend %defaultP;
+    @extend %defaultMargin;
+    position: relative;
+    @extend %borders;
+}
+
+.lay {
+    width: $width - 100;
+    height: $height - 100;
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    background-color: #000;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+
+.bigBox {
+    @extend %defaultP;
+    position: absolute;
+    top: -1px;
+    left: -10000px;
+    overflow: hidden;
+    @extend %borders;
+}
+
+.bigBox img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
